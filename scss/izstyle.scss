@@ -1,0 +1,134 @@
+//변수선언
+$default-padding: 16px;
+$bgcolor: #f1f1f1;
+$barkcolor: #333;
+$mediumcolor: #555;
+$lightcolor: #fff;
+$leftwidth: 75%;
+$rightwidth: 25%;
+$barkcolor2: black;
+
+
+//믹스인 선언
+@mixin flexlayout($dir: row, $just: space-between, $align: center) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $just;
+    align-items: $align;
+    @content;
+}
+
+.inner_con {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+#header {
+    background-color: $barkcolor2;
+    div {
+        @include flexlayout();
+        color: $lightcolor;
+        padding: 20px;
+        ul {
+            &:nth-child(1) {
+                @include flexlayout();
+                width: 13%;
+            }
+        }
+        ul {
+            &:nth-child(3) {
+                @include flexlayout();
+                width: 13%;
+            }
+        }
+    }
+}
+
+#container {
+    #visual {
+        background-color: $barkcolor2;
+        div {
+            
+            img {
+                width: 100%;
+            }
+        }
+    }
+    #product {
+        #product_menu {
+            @include flexlayout();
+            padding: 20px;
+            border-bottom: 3px double $mediumcolor;
+            ul {
+                @include flexlayout();
+                width: 30%;
+            }
+        }
+        #product_lists {
+            h3 {
+                text-align: center;
+                padding: $default-padding;
+            }
+            ul {
+                @include flexlayout();
+                margin: 30px;
+            }
+            li {
+                text-align: center;
+                color: #555;
+                h4 {
+                    margin: 10px 0;
+                }
+                p {
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
+}
+#banner {
+    display: flex;
+    #left {
+        width: 50%;
+        overflow: hidden;
+        div {
+        &:nth-child(1) {
+            width: 100%;
+            &:hover {
+                transform: scale(1.2);
+                transition: 0.5s;
+            }
+        }
+      }
+    }
+    #right {
+        width: 50%;
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: flex-start;
+        div {
+            overflow: hidden;
+            &:nth-child(1) {
+                width: 100%;
+                height: 50%;
+                &:hover {
+                    transform: scale(1.2);
+                    transition: 0.5s;
+                 }
+            &:nth-child(2) {
+                width: 50%;
+                height: 50%;
+            }
+            &:nth-child(3) {
+                width: 50%;
+                height: 50%;
+            }
+        }
+}
+        img {
+            width: 100%;
+        }
+ }   
+}

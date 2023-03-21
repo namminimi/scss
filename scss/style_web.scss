@@ -1,0 +1,103 @@
+//변수선언
+$default-padding: 16px;
+$bgcolor: #f1f1f1;
+$barkcolor: #333;
+$mediumcolor: #555;
+$lightcolor: #fff;
+$leftwidth: 75%;
+$rightwidth: 25%; 
+
+//믹스인 선언
+@mixin flexlayout($dir: row, $just: space-between, $align: center) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $just;
+    align-items: $align;
+    @content;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: {
+        size: 14px;
+        family: "맑은 고딕", sans-serif;
+    }
+    line-height: 1.6;
+    color: #333;
+   
+}
+
+#wrap {
+    width: 100%;
+    padding: $default-padding;
+    background-color: $bgcolor;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+    list-style-position: inside;
+}
+h1, h2, h3, h4, h5 ,h6 {
+    font-weight: normal;
+}
+
+#header {
+    background: $lightcolor;
+    height: 150px;
+    text-align: center;
+    margin-bottom: $default-padding;
+    .mainTitle {
+        height: 120px;
+        padding-top:25px;
+    }
+    #menuBar {
+        background: $barkcolor;
+        color: $lightcolor;
+        @include flexlayout();
+        height: 30px;
+        ul {
+            @include flexlayout();
+        }
+        a {
+            padding: 0 $default-padding;
+        }
+    }
+}
+#content {
+    @include flexlayout($align:flex-start);
+    #left {
+        width: $leftwidth;
+    }
+    #right {
+        width: $rightwidth;
+        padding-left: $default-padding;
+    }
+    .containor1, .containor2, .containor3, .containor4 {
+        background: $lightcolor;
+        padding: $default-padding;
+        margin-bottom: $default-padding;
+        div {
+            background: $mediumcolor;
+            color: $lightcolor;
+            height: 120px;
+            padding: calc($default-padding / 2);
+            margin: calc($default-padding / 2) 0;
+        }
+    }
+}
+#footer {
+    text-align: center;
+    background: $mediumcolor;
+    color: $lightcolor;
+    padding: $default-padding;
+}

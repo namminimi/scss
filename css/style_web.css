@@ -1,0 +1,95 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: "맑은 고딕", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+#wrap {
+  width: 100%;
+  padding: 16px;
+  background-color: #f1f1f1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+  list-style-position: inside;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+#header {
+  background: #fff;
+  height: 150px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+#header .mainTitle {
+  height: 120px;
+  padding-top: 25px;
+}
+#header #menuBar {
+  background: #333;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+#header #menuBar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#header #menuBar a {
+  padding: 0 16px;
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+#content #left {
+  width: 75%;
+}
+#content #right {
+  width: 25%;
+  padding-left: 16px;
+}
+#content .containor1, #content .containor2, #content .containor3, #content .containor4 {
+  background: #fff;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+#content .containor1 div, #content .containor2 div, #content .containor3 div, #content .containor4 div {
+  background: #555;
+  color: #fff;
+  height: 120px;
+  padding: 8px;
+  margin: 8px 0;
+}
+
+#footer {
+  text-align: center;
+  background: #555;
+  color: #fff;
+  padding: 16px;
+}/*# sourceMappingURL=style_web.css.map */

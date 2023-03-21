@@ -1,0 +1,19 @@
+.list {
+    $w: 100px !global;
+    $h: 50px !global;
+    li {
+        width: $w;
+        height: $h;
+    }
+
+    @at-root .box {
+        // .box라는 요소가 .list안에 있는건 아니고 위에 
+        // 변수를 적용하기위해서 @at-root사용
+        width: $w;
+        height: $h;
+    }
+}
+.box {
+    width: $w;
+    height: $h;
+}
